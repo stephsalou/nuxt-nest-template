@@ -1,5 +1,5 @@
 import { NuxtConfig } from '@nuxt/types'
-
+const pkg = require('./package.json')
 const config: NuxtConfig = {
   // Disabled nuxt telemetry
   telemetry: false,
@@ -57,6 +57,17 @@ const config: NuxtConfig = {
     '@nuxtjs/tailwindcss',
     '@aceforth/nuxt-netlify',
   ],
+  netlify: {
+    headers: {
+      '/*': [
+        'Access-Control-Allow-Origin: *',
+        `X-Build: ${pkg.version}`
+      ],
+      '/favicon.ico': [
+        'Cache-Control: public, max-age=86400'
+      ]
+    }
+  },
   /*
    ** Nuxt.js modules
    */
