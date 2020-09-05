@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "./dist/server",
+    "baseUrl": "./",
+    // "incremental": true,
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"]
+    // "esModuleInterop": true,
+    // "allowJs": true,
+    // "strict": true,
+    // "noEmit": true,
+    // "paths": {
+    //   "~/*": ["./client/*"],
+    //   "@/*": ["./client/*"]
+    // },
+    // "types": ["@types/node", "@nuxt/types"]
+  }
+  // "exclude": ["node_modules", ".nuxt", "dist"]
+}

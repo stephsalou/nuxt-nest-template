@@ -1,0 +1,81 @@
+{
+  "name": "nuxt-nest-template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "nuxt": "nuxt",
+    "nest": "nest start",
+    "dev": "cross-env IS_NUXT_ENABLED=true nodemon",
+    "dev:client": "nuxt",
+    "dev:server": "nodemon",
+    "build": "run-s clean:dist compile:server compile:client copy:.nuxt copy:client copy:config",
+    "clean:dist": "rimraf dist",
+    "compile:server": "tsc -p tsconfig.build.json",
+    "compile:client": "cross-env mode=production nuxt build",
+    "copy:client": "copyfiles -a \"client/**/*\" dist",
+    "copy:.nuxt": "copyfiles -a \".nuxt/**/*\" dist",
+    "copy:config": "copyfiles nuxt.config.ts package.json package-lock.json dist"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
+    "@nuxt/content": "^1.5.0",
+    "@nuxt/typescript-runtime": "^1.0.0",
+    "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "nuxt": "^2.14.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^7.0.0",
+    "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^7.0.0",
+    "@nuxt/types": "^2.14.0",
+    "@nuxt/typescript-build": "^2.0.2",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-config-typescript": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^2.1.0",
+    "@types/express": "^4.17.3",
+    "@types/jest": "26.0.10",
+    "@types/node": "^13.9.1",
+    "@types/supertest": "^2.0.8",
+    "@typescript-eslint/eslint-plugin": "3.9.1",
+    "@typescript-eslint/parser": "3.9.1",
+    "@vue/test-utils": "^1.0.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
+    "copyfiles": "^2.3.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.1.3",
+    "ts-loader": "^6.2.1",
+    "ts-node": "9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.4",
+    "vue-jest": "^3.0.4"
+  }
+}
