@@ -55,6 +55,7 @@ const config: NuxtConfig = {
     // '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    '@aceforth/nuxt-netlify',
   ],
   /*
    ** Nuxt.js modules
