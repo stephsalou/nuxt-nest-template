@@ -6,3 +6,11 @@
     // "*.{css,vue}": "stylelint"
 
     //  "@nuxtjs/stylelint-module": "^4.0.0",
+      "lint-staged": {
+        "*.{js,vue}": "eslint"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged"
+        }
+      },
