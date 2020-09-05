@@ -8,10 +8,11 @@
     "dev": "cross-env IS_NUXT_ENABLED=true nodemon",
     "dev:client": "nuxt",
     "dev:server": "nodemon",
-    "build": "run-s clean:dist compile:server compile:client copy:.nuxt copy:client copy:config",
+    "build": "run-s clean:dist compile:server compile:client client:generate copy:.nuxt copy:client copy:config",
     "clean:dist": "rimraf dist",
     "compile:server": "tsc -p tsconfig.build.json",
     "compile:client": "cross-env mode=production nuxt build",
+    "client:generate": "cross-env mode=production nuxt generate",
     "copy:client": "copyfiles -a \"client/**/*\" dist",
     "copy:.nuxt": "copyfiles -a \".nuxt/**/*\" dist",
     "copy:config": "copyfiles nuxt.config.ts package.json package-lock.json dist"
